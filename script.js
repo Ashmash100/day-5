@@ -33,7 +33,20 @@ request.onload = function () {
 
    5. Print the country which use US Dollars as currency.
 
-      var country = data.filter(v => { return v.currencies[0].code === 'USD' } )
-      console.log(country);
+      var currency = data.filter(v => {
+       let flag = false;
+       v.currencies.forEach(element => {
+         if(element.code === 'USD') {
+           flage = true;
+         }
+       })
+       if(flag == true) {
+         return true;
+       } else {
+         return false;
+       }
+
+       })
+      console.log(currency);
 
 }
